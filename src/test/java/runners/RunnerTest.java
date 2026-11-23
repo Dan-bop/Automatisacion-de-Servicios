@@ -10,4 +10,4 @@ import org.junit.runner.RunWith;
         glue = "stepdefinitions",
         plugin = {"pretty"}
 )
-public class TestRunner { }
+public class RunnerTest { }

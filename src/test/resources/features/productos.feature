@@ -30,3 +30,8 @@ Feature: Gestión de productos
     When consulta el producto con id 99999
     Then el servicio responde con código 404
     And el mensaje de error contiene "not found"
+
+  Scenario: Validar título incorrecto (fallo intencional)
+    When consulta el producto con id 1
+    Then el servicio responde con código 200
+    And el título del producto es "Título que no existe"

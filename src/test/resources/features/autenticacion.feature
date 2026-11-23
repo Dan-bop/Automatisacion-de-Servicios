@@ -21,3 +21,9 @@ Feature: Autenticación de usuarios
     When inicia sesión con usuario "emilys" y contraseña "incorrecta123"
     Then el servicio responde con código 400
     And el mensaje de error contiene "Invalid credentials"
+
+  Scenario: Validar usuario incorrecto en el perfil (fallo intencional)
+    When inicia sesión con usuario "emilys" y contraseña "emilyspass"
+    And consulta su perfil con el token recibido
+    Then el servicio responde con código 200
+    And el usuario del perfil es "usuario_inexistente"
